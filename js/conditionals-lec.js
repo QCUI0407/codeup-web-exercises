@@ -79,7 +79,7 @@ let shoes = 'red';
 let shirt = 'hawaiian'
 let pants = 'denim';
 let jacket = true;
-let emergency = true;
+
 
 if(shoes === 'blue') {
     console.log("Everyone is dismissed.")
