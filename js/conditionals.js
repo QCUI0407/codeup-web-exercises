@@ -181,30 +181,34 @@
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
-
-let userTypeNum = confirm("Would you like to enter a number as a your lucky number?");
+//solution 1
+let userTypeNum = confirm("Would you like to enter a number？");
 function userFinalNum(){
     if(userTypeNum){
         let userNum = parseFloat(prompt("what is your number?"));
-        if(userNum%2 === 1 || userNum%2 === 0){
-           switch (userNum){
-               case userNum:
-                   alert("number is even or odd.");
-               case userNum:
-                   alert(userNum + 100);
-               case userNum>0 || userNum < 0:
-                   alert("number is negative or positive");
-                   //break;
-           }
-            } else{
-            alert(userNum + " is a decimal");
+        let userNumAbsolute = Math.abs(userNum);
+        if(userNum === 0) {
+            alert("100")
+        } else {
+            switch (true) {
+                case userNumAbsolute % 2 === 1 || userNumAbsolute % 2 === 0:
+                    alert("number is even or odd.");
+                case true:
+                    alert(userNum + 100);
+                case true:
+                    alert("number is negative or positive");
+                    break;
+            }
         }
     } else {
         alert("GOOD BYE!");
     }
-};
+}
 
 userFinalNum();
+
+//solution 2
+
 
 
 
