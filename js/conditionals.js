@@ -181,34 +181,99 @@
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
-//solution 1
 let userTypeNum = confirm("Would you like to enter a number？");
 function userFinalNum(){
     if(userTypeNum){
-        let userNum = parseFloat(prompt("what is your number?"));
-        let userNumAbsolute = Math.abs(userNum);
-        if(userNum === 0) {
-            alert("100")
+        let userNum = prompt("what is your number?");
+        let userNumAbsolute = Math.abs(Number(userNum));
+        let userNumPlus100 = Number(userNum) + 100;
+        let totalForUserNumPlus100 = userNum + " plus 100 is " + userNumPlus100;
+        if(isNaN(userNum)){
+            alert("please write only number.")
         } else {
-            switch (true) {
-                case userNumAbsolute % 2 === 1 || userNumAbsolute % 2 === 0:
-                    alert("number is even or odd.");
-                case true:
-                    alert(userNum + 100);
-                case true:
-                    alert("number is negative or positive");
-                    break;
+            //0
+            if(userNum == 0){
+                switch (true){
+                    case true:
+                        alert("0 is not even or odd.");
+                    case ture:
+                        alert(totalForUserNumPlus100);
+                    case ture:
+                        alert("0 is not negative or positive.");
+                }
+            } else if(userNumAbsolute - Number(parseInt(userNumAbsolute)) > 0){
+                //decimal,pos
+                if(userNum>0){
+                    switch (true){
+                        case true:
+                            alert(userNum + " is decimal number.");
+                        case ture:
+                            alert(totalForUserNumPlus100);
+                        case ture:
+                            alert(userNum + " is positive number.");
+                    }
+                } else{
+                    switch (true){
+                        case true:
+                            alert(userNum + " is decimal number.");
+                        case ture:
+                            alert(totalForUserNumPlus100);
+                        case ture:
+                            alert(userNum + " is negative  number.");
+                    }
+                }
+            }else{
+                //not zero
+                //odd & pos
+                if(userNumAbsolute%2 === 1 && userNum > 0){
+                    switch (true){
+                        case  true:
+                            alert(userNum +" is odd number.");
+                        case true:
+                            alert(totalForUserNumPlus100);
+                        case true:
+                            alert(userNum + " is positive number.");
+                    }
+                }//even & pos
+                else if(userNumAbsolute%2 === 0 && userNum > 0){
+                    switch (true){
+                        case  true:
+                            alert(userNum +" is even number.");
+                        case true:
+                            alert(totalForUserNumPlus100);
+                        case true:
+                            alert(userNum + " is positive number.");
+                    }
+                }//odd & neg
+                else if(userNumAbsolute%2 === 1 && userNum < 0){
+                    switch (true){
+                        case  true:
+                            alert(userNum +" is odd number.");
+                        case true:
+                            alert(totalForUserNumPlus100);
+                        case true:
+                            alert(userNum + " is negative  number.");
+                    }
+                }//even & neg
+                else if(userNumAbsolute%2 === 0 && userNum < 0){
+                    switch (true){
+                        case  true:
+                            alert(userNum +" is even number.");
+                        case true:
+                            alert(totalForUserNumPlus100);
+                        case true:
+                            alert(userNum + " is negative  number.");
+                    }
+                }
             }
         }
-    } else {
-        alert("GOOD BYE!");
     }
-}
+    else{
+        alert("Good Bye.");
+    }
+};
 
 userFinalNum();
-
-//solution 2
-
 
 
 
