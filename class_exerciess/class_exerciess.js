@@ -121,12 +121,27 @@ function isConsonant(){
    }
 }
 
-  isConsonant(a)
+  isConsonant()
 
 
 // Make a function named isCapital(letter)
+
+function isCapital(letter){
+  return letter = letter.toUpperCase();
+}
 // Make a function named isLowerCase(letter)
+
+function isLowerCase(letter){
+   return letter =letter.toLowerCase();
+}
 // Make a function named hasLowerCase(string) that returns if a string has any lower cased letter
+
+function hasLowerCase(str){
+   str =
+}
+
+
+
 // Make a function named isSpace(letter) that returns if a character is a space character
 // Make a function named isZero(number)
 // Make a function named notZero(input) that returns true if the input is not zero
