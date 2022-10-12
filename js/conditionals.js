@@ -24,19 +24,19 @@
     let blue = "blue is the color of the sky";
     let red = "Strawberries are red";
     let cyan = "I don't know anything about cyan";
-   //  let userColor = prompt("write a color").toLowerCase()
-   //  function analyzeColor(input){
-   //      if (input === "blue") {
-   //         alert(blue);
-   //      } else if (input === "red") {
-   //          alert(red);
-   //      } else if (input === "cyan"){
-   //          alert(cyan);
-   //      } else{
-   //          alert("????????????")
-   //      }
-   //  };
-   // analyzeColor(userColor);
+    let userColor = prompt("write a color").toLowerCase()
+    function analyzeColor(input){
+        if (input === "blue") {
+           alert(blue);
+        } else if (input === "red") {
+            alert(red);
+        } else if (input === "cyan"){
+            alert(cyan);
+        } else{
+            alert("????????????");
+        }
+    }
+   analyzeColor(userColor);
 
 
 // Don't change the next two lines!
@@ -46,8 +46,8 @@
 //                  will contain a different color every time the page loads)
 
 
-// var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-// var randomColor = colors[Math.floor(Math.random() * colors.length)];
+var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+var randomColor = colors[Math.floor(Math.random() * colors.length)];
 /**
  * TODO:
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
@@ -62,19 +62,19 @@
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
 
-// switch (randomColor){
-//     case "blue":
-//         alert(blue)
-//         break;
-//     case "red":
-//         alert(red)
-//         break;
-//     case "cyan":
-//         alert(cyan)
-//         break;
-//     default:
-//         alert("change to other color")
-// };
+switch (randomColor){
+    case "blue":
+        alert(blue)
+        break;
+    case "red":
+        alert(red)
+        break;
+    case "cyan":
+        alert(cyan)
+        break;
+    default:
+        alert("change to other color")
+};
 
 /**
  * TODO:
@@ -118,36 +118,35 @@
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-//let yourNum = prompt("pick a number from 0 - 5");
-// function calculateTotal(num, num1){
-//      //num1 = 100
-//     if (num == 0){
-//         alert("lucky num is " + num + "\n"
-//             +"price before the discount $" + totalBill +"\n"
-//             +"price after the discount is$" + num1);
-//     } else if(num == 1){
-//         alert("lucky num is " + num + "\n"
-//             +"price before the discount $" + totalBill +"\n"
-//             +"price after the discount is$" + ((1- 0.1) * num1));
-//     } else if(num == 2){
-//         alert("lucky num is " + num + "\n"
-//             +"price before the discount $" + totalBill +"\n"
-//             +"price after the discount is$" +((1-0.25)*num1));
-//     } else if(num == 3){
-//         alert("lucky num is " + num + "\n"
-//             +"price before the discount $" + totalBill +"\n"
-//             +"price after the discount is$" + ((1-0.35)*num1));
-//     } else if(num == 4){
-//         alert("lucky num is " + num + "\n"
-//             +"price before the discount $" + totalBill +"\n"
-//             +"price after the discount is$" +((1- 0.5) * num1));
-//     } else if(num == 5){
-//         alert("lucky num is " + num + "\n"
-//             +"price before the discount $" + totalBill +"\n"
-//             +"price after the discount is$" +("0"));
-//     };
-// };
-//calculateTotal(yourNum, 100);
+let yourNum = prompt("pick a number from 0 - 5");
+function calculateTotal(num, num1){
+    if (num == 0){
+        alert("lucky num is " + num + "\n"
+            +"price before the discount $" + num1 +"\n"
+            +"price after the discount is$" + (num1 * 1));
+    } else if(num == 1){
+        alert("lucky num is " + num + "\n"
+            +"price before the discount $" + num1 +"\n"
+            +"price after the discount is$" + ((1- 0.1) * num1));
+    } else if(num == 2){
+        alert("lucky num is " + num + "\n"
+            +"price before the discount $" + num1 +"\n"
+            +"price after the discount is$" +((1-0.25)*num1));
+    } else if(num == 3){
+        alert("lucky num is " + num + "\n"
+            +"price before the discount $" + num1 +"\n"
+            +"price after the discount is$" + ((1-0.35)*num1));
+    } else if(num == 4){
+        alert("lucky num is " + num + "\n"
+            +"price before the discount $" + num1 +"\n"
+            +"price after the discount is$" +((1- 0.5) * num1));
+    } else if(num == 5){
+        alert("lucky num is " + num + "\n"
+            +"price before the discount $" + num1 +"\n"
+            +"price after the discount is$" +("0"));
+    };
+};
+calculateTotal(yourNum, 100);
 
 /**
  * TODO:
@@ -158,10 +157,10 @@
  * price before the discount was, and what their price after the discount is.
  */
 //Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
 
-// let totalBill = prompt("what is your total bill?")
-// calculateTotal(luckyNumber, totalBill);
+let totalBill = prompt("what is your total bill?")
+calculateTotal(luckyNumber, totalBill);
 
 /**
  * TODO:
