@@ -33,8 +33,26 @@
 if string[i] === /[a-z]/ return true
  */
 
-function hasLowerCase(str) {
-    return (/[a-z]/.test(str));
-}
+// function hasLowerCase(str) {
+//     return (/[a-z]/.test(str));
+// }
+//
+// console.log(hasLowerCase("CUI"));
 
-console.log(hasLowerCase("CUI"));
+// Write a function named "inBetween" that accepts three inputs: min, max, num, and returns a boolean determining whether or not the "num" parameter is in between the min and max numbers.
+//
+//     EX:
+// inBetween(1, 10, 5) returns true
+// inBetween(25, 26, 25) returns false
+// inBetween(0, 1, 0.5) returns true
+
+function inBetween(min,max,num){
+    // let boolean;
+    // if(num>min && num <max){
+    //     boolean = true;
+    //     return boolean;
+    //     //return true;
+    // }
+        return num<max && num>min;
+}
+inBetween(4,6,5);
