@@ -36,13 +36,13 @@
 //     console.log(hello[i])
 // }
 
-for(let i = 0; i < 10; i++){
-    if(i % 2 === 0){
-        console.log(i + "is even")
-        continue;
-    }
-    console.log(i +'is odd');
-}
+// for(let i = 0; i < 10; i++){
+//     if(i % 2 === 0){
+//         console.log(i + "is even")
+//         continue;
+//     }
+//     console.log(i +'is odd');
+// }
 
 
 
@@ -61,3 +61,23 @@ for(let i = 0; i < 10; i++){
 //     }
 //     console.log();
 // }
+//--------------------------------------------
+
+// 1
+// 112
+// 112123
+// 1121231234
+// 112123123412345
+// 112123123412345123456
+
+for(let i = 1; i <= 6; i++){
+    let show = "";
+    for(let j = 1; j <= i;j++){
+        show = show + j
+        for(let k = 1; k <= i; k++){
+            let show2 = show + k;
+            console.log(show2);
+        }
+    }
+    console.log(show);
+}

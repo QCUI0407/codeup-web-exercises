@@ -8,7 +8,7 @@ function showMultiplicationTable(inputNum){
         num++
     }
 }
-console.log(showMultiplicationTable(7))
+showMultiplicationTable(7)
 
 // Use a for loop and the code from the previous lessons to generate 10 random numbers between 20 and 200 and output to the console whether each number is odd or even.
 
@@ -19,8 +19,9 @@ function randomNum(){
 for(let i = 1; i<= 10; i++){
     if(randomNum()%2 === 0){
         console.log(randomNum() + " is even");
-        continue;
-    }console.log(randomNum() + " is odd");
+        // continue;
+    }else {console.log(randomNum() + " is odd");
+    }
 }
 
 // Create a for loop that uses console.log to create the output shown below.
@@ -33,14 +34,16 @@ for(let i = 1; i <= 9; i++){
 
 //2
 
-for(let i = 1; i <+ 9; i++){
-    let show = '^';
+for(let i = 1; i <= 9; i++){
+    let show = '';
     for(let j = 1; j <= i; j++){
-        show = show + i;
-        console.log("j "+j)
+        show = show + j;
+        // console.log("j "+j)
     }
-    console.log(show + "--->");
+    console.log(show);
 }
+
+
 
 // Create a for loop that uses console.log to create the output shown below.
 for (let i=100; i>=5; i-=5){
