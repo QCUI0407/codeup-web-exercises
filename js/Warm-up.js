@@ -56,3 +56,32 @@ function inBetween(min,max,num){
         return num<max && num>min;
 }
 inBetween(4,6,5);
+
+// Morning Warm-Up:
+//
+// Create a function named "typePrinter" that accepts an array as an input, and logs the data type of each element to the console.
+//
+    let arr = [true, "Icon", 25, "66", false, 0];
+
+
+
+function typePrinter(userArr){
+        for(let i = 0; i<userArr.length; i++){
+                console.log(typeof userArr[i]);
+        }
+}
+
+typePrinter(arr);
+
+
+
+
+
+
+
+
+
+
+
+
+
