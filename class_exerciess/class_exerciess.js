@@ -2,143 +2,143 @@
 // Functions using conditionals but not loops or arrays:
 //
 //     Make a function named isOdd(number)
-function isOdd(num){
-   if(num % 2 == 1){
-      console.log(num + " is odd number.");
-   } else if(num === 1){
-      console.log(num + " is odd number.");
-   } else{
-   };
-};
-isOdd(9);
+// function isOdd(num){
+//    if(num % 2 == 1){
+//       console.log(num + " is odd number.");
+//    } else if(num === 1){
+//       console.log(num + " is odd number.");
+//    } else{
+//    };
+// };
+// isOdd(9);
 
 // Make a function named isEven(number)
 
-function isEven(num){
-   if(num % 2 == 0){
-      console.log(num + " is even number.");
-   };
-};
-isEven(8);
+// function isEven(num){
+//    if(num % 2 == 0){
+//       console.log(num + " is even number.");
+//    };
+// };
+// isEven(8);
 
 // Make a function named identity(input) that returns the input exactly as provided.
 
-function identity(input){
-   return console.log(input)};
-identity(1230);
+// function identity(input){
+//    return console.log(input)};
+// identity(1230);
 
 //     Make a function named isFive(input)
-
-function isFive(){
-   return console.log(5);
-};
-isFive();
+//
+// function isFive(){
+//    return console.log(5);
+// };
+// isFive();
 
 // Make a function named addFive(input) that adds five to some input.
 
-function addFive(input){
-   return Number(input) + 5;
-};
-console.log(addFive());
+// function addFive(input){
+//    return Number(input) + 5;
+// };
+// console.log(addFive());
 
 //     Make a function named isMultipleOfFive(input)
 
-function isMultipleOfFive(input){
-   return  console.log(input - 5);
-}
-isMultipleOfFive(0);
+// function isMultipleOfFive(input){
+//    return  console.log(input - 5);
+// }
+// isMultipleOfFive(0);
 
 // Make a function named isThree(input)
-
-function isThree(input){
-   return console.log(3);
-}
-isThree();
+//
+// function isThree(input){
+//    return console.log(3);
+// }
+// isThree();
 
 // Make a function named isMultipleOfThree(input)
-
-function isMultipleOfThree(input){
-   return console.log(input - 3);
-}
-isMultipleOfThree(0);
+//
+// function isMultipleOfThree(input){
+//    return console.log(input - 3);
+// }
+// isMultipleOfThree(0);
 
 // Make a function named isMultipleOfThreeAndFive(input)
-
-function isMultipleOfThreeAndFive(input){
-   return console.log(input - 3 - 5);
-}
-isMultipleOfThreeAndFive(0);
+//
+// function isMultipleOfThreeAndFive(input){
+//    return console.log(input - 3 - 5);
+// }
+// isMultipleOfThreeAndFive(0);
 
 // Make a function named isMultipleOf(target, n) which checks if target is evenly divisible by n
 
-function isMultipleOf(target, n){
-   if(target%n == 0){
-      console.log("evenly divisible.");
-   };
-};
-isMultipleOf(9,3);
+// function isMultipleOf(target, n){
+//    if(target%n == 0){
+//       console.log("evenly divisible.");
+//    };
+// };
+// isMultipleOf(9,3);
 
 // Make a function named isTrue(boolean)
-
-function isTrue(boolean){
-   return true;
-}
-console.log(isTrue());
+//
+// function isTrue(boolean){
+//    return true;
+// }
+// console.log(isTrue());
 
 // Make a function named isFalse(boolean)
 
-function  isFalse(boolean){
-   return   false;
-}
-console.log(isFalse());
+// function  isFalse(boolean){
+//    return   false;
+// }
+// console.log(isFalse());
 
 // Make a function named isTruthy(input), remember that values other than true will behave like true
 
-function isTruthy(input){
-   return true;
-};
-console.log(isTruthy());
+// function isTruthy(input){
+//    return true;
+// };
+// console.log(isTruthy());
 
 // Make a function named isFalsy(input), remember that values other than false behave like false
 
-function isFalsy(input){
-   return false;
-};
-console.log(isFalsy());
-
-// Make a function named isVowel(letter)
-
-const isVowel = ("aeiouAEIOU");
-console.log(isVowel.includes("a"));
+// function isFalsy(input){
+//    return false;
+// };
+// console.log(isFalsy());
+//
+// // Make a function named isVowel(letter)
+//
+// const isVowel = ("aeiouAEIOU");
+// console.log(isVowel.includes("a"));
 
 // Make a function named isConsonant(letter)
-function isConsonant(){
-   isConsonant = (aeiouAEIOU);
-   if (isConsonant.includes("")) {
-      console.log(isConsonant + " is not.");
-   } else {
-      console.log(isConsonant + 'is cons.');
-   }
-}
-
-  isConsonant()
+// function isConsonant(){
+//    isConsonant = (aeiouAEIOU);
+//    if (isConsonant.includes("")) {
+//       console.log(isConsonant + " is not.");
+//    } else {
+//       console.log(isConsonant + 'is cons.');
+//    }
+// }
+//
+//   isConsonant()
 
 
 // Make a function named isCapital(letter)
 
-function isCapital(letter){
-  return letter = letter.toUpperCase();
-}
+// function isCapital(letter){
+//   return letter = letter.toUpperCase();
+// }
 // Make a function named isLowerCase(letter)
 
-function isLowerCase(letter){
-   return letter =letter.toLowerCase();
-}
+// function isLowerCase(letter){
+//    return letter =letter.toLowerCase();
+// }
 // Make a function named hasLowerCase(string) that returns if a string has any lower cased letter
 
-function hasLowerCase(str){
-   str =
-}
+// function hasLowerCase(str){
+//    str =
+// }
 
 
 
@@ -245,3 +245,109 @@ function hasLowerCase(str){
 //     Create a function, willLoginUser() that takes in a username string, password string, user age, a boolean indicating if they are an admin.
 //
 //     The function will return true if the username is not the same as the password and the user is at least 18 years old. If the user is an admin, they do not have to be a certain age but the password must still not match the username.
+//------------------------------Array-------------------------------------
+/**
+ * JS Array Practice
+ * Intermediate Array practice: array creation, iteration, and manipulation
+ */
+
+// Exercise 0. Write a function named first() that returns only the first element of an array
+
+// function first(arr){
+//    console.log(arr[1]);
+// }
+
+// Exercise 1. Write a function named secondToLast() that returns the second to last element
+
+// function secondToLast(){
+//    console.log(arr.slice(2));
+// }
+
+// Exercise 2. Write a function named rest() that takes an array and returns an array containing everything except the first element.
+
+// function rest(arr){
+//    return arr.slice(1);
+// }
+
+// Exercise 3. Write a function named getLongestString that takes in an array of strings and returns the longest string of that array
+
+
+// let arr1 = ["asd", "q", "we", "dwdasdwa"]
+//
+// function getLongestString(arr){
+//    let LongestString = "";
+//
+//    arr.forEach(function(arr0){
+//       if(arr0.length > LongestString.length){
+//          LongestString = arr0;
+//       }
+//    });
+//    return LongestString;
+// }
+// console.log(getLongestString(arr1))
+
+// Exercise 3.1 Write a function named getShortestString that takes in an array of strings and returns the shortest string in that array.
+
+// Exercise 4. Write a function named addTwoArrays that takes in two, one dimensional arrays. The function should return a single array containing all of the elements of the first array along with all of the elements of the second array
+
+// function addTwoArrays(arr1, arr2){
+//    return arr1.concat(arr2);
+// }
+// Example: addTwoArrays([1, 2, 3], [4, 5, 6]) should return [1, 2, 3, 4, 5, 6]
+
+// Exercise 5. Write a function named getUniqueValues that takes in an array and returns the array without any duplicates
+// Example: getUniqueValues(["a", "b", "a", "b", "c", "c"]) should return ["a", "b", "c"]
+
+function getUniqueValues(arr){
+   for(let i = 0; i < arr.length; i++){
+      for(let j = i+1; j < arr.length; j++){
+         if(arr[i] == arr[j]){
+            arr.splice(j,1);
+            j--;
+         }
+      }
+   }
+}
+
+console.log(getUniqueValues(["a", "b", "a", "b", "c", "c"]));
+
+// Exercise 6. Write a function named reverseArray that takes in an array and returns it reversed, but without altering the original array.
+
+
+
+
+
+// Exercies 7. Write a function named getRandomQuote().
+//   Inside of the function, create an array of strings where each string is a quote or thought you find inspirational
+//   getRandomQuote should generate a random number between 0 and the array's length minus 1
+//   use the randomly generated number as your index
+//   return a random quote.
+
+// Exercise 8. Write a function named getIndexesOf() that takes in two arguments.
+// The first argument should be a specific numeral or character
+// The second argument should be any given string
+// getIndexesOf() should return an array containing all of the indexes of that character in the string
+// Example: getIndexesOf("a", "banana") should return the array [1, 3, 5]
+// Example: getIndexesOf("z", "banana") should return an empty array [] since there are no "z" characters in "banana"
+
+// Exercise 9. Write a function named removeAll.
+// It should accept an array and a value
+// removeAll should return an array with all of the original contents EXCEPT for the provided value
+// iterate across the input array
+// output array
+// Example: removeAll([1, 2, 3], 2) should return [1, 3]
+// Example 2: removeAll([2, 2, 3, 4, 5, 2, 2], 2) should return [3, 4, 5]
+
+// Exercise 10. Write a function named firstTenFibonacciNumbers() that returns an array of the first ten fibonacci numbers
+
+// Exercise 11. Write a function named getNFibonacci(n) that returns an array containing the first n fibonacci numbers
+
+// Exercise 12. Write a function named moveFirstToLast() that takes in an array
+// the function should return the array with the first element at the end
+// Example: moveFirstToLast([1, 2, 3, 4]) should return [2, 3, 4, 1]
+
+
+// Exercise 13. Write a function named zip() that takes in two arrays with the same number of elements
+// Zip returns a new array of arrays where each element is an array of the two elements at the same index
+// Example: zip([1, 2, 3], [4, 5, 6]) returns [[1, 4], [2, 5], [3, 6])
+// Example: zip(["a", "b", "c"], ["x", "y", "z"]) returns [["a", "x"], ["b", "y"], ["c", "z"]]
