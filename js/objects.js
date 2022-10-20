@@ -12,10 +12,10 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
-    let person = {
-        firstName: "Rick",
-        lastName: "Sanchez"
-    }
+    // let person = {
+    //     firstName: "Rick",
+    //     lastName: "Sanchez"
+    // }
 
 
     /**
@@ -31,8 +31,8 @@
     // let sayHello(){
     //     console.log("Hello from" + person.firstName + person.lastName);
     // }
-person["sayHello"]= function (){return "Hello from " + person.firstName +" "+ person.lastName+ "!"}
-    console.log(person.sayHello())
+// person["sayHello"]= function (){return "Hello from " + person.firstName +" "+ person.lastName+ "!"}
+//     console.log(person.sayHello())
 
 
 
