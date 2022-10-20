@@ -298,23 +298,26 @@
 // Exercise 5. Write a function named getUniqueValues that takes in an array and returns the array without any duplicates
 // Example: getUniqueValues(["a", "b", "a", "b", "c", "c"]) should return ["a", "b", "c"]
 
-function getUniqueValues(arr){
-   for(let i = 0; i < arr.length; i++){
-      for(let j = i+1; j < arr.length; j++){
-         if(arr[i] == arr[j]){
-            arr.splice(j,1);
-            j--;
-         }
-      }
-   }
-}
-
-console.log(getUniqueValues(["a", "b", "a", "b", "c", "c"]));
+// function getUniqueValues(arr){
+//    for(let i = 0; i < arr.length; i++){
+//       for(let j = i+1; j < arr.length; j++){
+//          if(arr[i] == arr[j]){
+//             arr.splice(j,1);
+//             j--;
+//          }
+//       }
+//    }
+// }
+//
+// console.log(getUniqueValues(["a", "b", "a", "b", "c", "c"]));
 
 // Exercise 6. Write a function named reverseArray that takes in an array and returns it reversed, but without altering the original array.
 
-
-
+// function reverseArray(arr){
+//    return arr.reverse();
+// }
+//
+// console.log(reverseArray(["a", "b", "a", "b", "c", "c"]));
 
 
 // Exercies 7. Write a function named getRandomQuote().
@@ -323,12 +326,46 @@ console.log(getUniqueValues(["a", "b", "a", "b", "c", "c"]));
 //   use the randomly generated number as your index
 //   return a random quote.
 
+// function getRandomQuote(){
+//    let arr = ['1','2','3','4','5','6'];
+//    let randomNum = Math.floor(Math.random() * (arr.length - 1 - 0 + 1) + 0);
+//    return randomNum +" "+ arr[randomNum];
+// }
+// console.log(getRandomQuote())
+
 // Exercise 8. Write a function named getIndexesOf() that takes in two arguments.
 // The first argument should be a specific numeral or character
 // The second argument should be any given string
 // getIndexesOf() should return an array containing all of the indexes of that character in the string
 // Example: getIndexesOf("a", "banana") should return the array [1, 3, 5]
 // Example: getIndexesOf("z", "banana") should return an empty array [] since there are no "z" characters in "banana"
+
+
+function getIndexesOf(input, str){
+   let indexNum = ""
+   let i = 0;
+   while (i < str.length){
+      console.log(str.charAt(i));
+      if(input === str.charAt(i)){
+         indexNum += i;
+      }
+      if(indexNum === ""){
+         return []
+      }
+      ++i
+   }return indexNum.split("");
+   for(let i = 0; i < str.length; i++) {
+      console.log(str.charAt(i));
+      if(input === str.charAt(i)){
+         indexNum += i;
+      }
+   }
+   if(indexNum === ""){
+      return []
+   }
+   return indexNum.split("");
+}
+console.log(getIndexesOf("a", "banana"))
 
 // Exercise 9. Write a function named removeAll.
 // It should accept an array and a value
@@ -337,6 +374,10 @@ console.log(getUniqueValues(["a", "b", "a", "b", "c", "c"]));
 // output array
 // Example: removeAll([1, 2, 3], 2) should return [1, 3]
 // Example 2: removeAll([2, 2, 3, 4, 5, 2, 2], 2) should return [3, 4, 5]
+
+
+
+
 
 // Exercise 10. Write a function named firstTenFibonacciNumbers() that returns an array of the first ten fibonacci numbers
 
