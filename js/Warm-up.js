@@ -76,12 +76,59 @@ typePrinter(arr);
 
 
 
+// Warm-Up:
+//
+// Create a function named "average" that takes in an array of numeric values, and returns the average. If any of the elements in the array are non-numeric, the function should return false.
+//
+//     Ex:
+// average(["6", 5, 3, 2, 9])                       // returns 5
+// average([true, 6, 9, 3, 10])                     // returns false
+// average([{name: "Codey the Duck}, 10, 3, false]) // returns false
+//     average([1, 2, 3, 4, 5])                         // returns 3
+//     average(["5.5", "five", 3, 6, 7])                // returns false
+
+// function average(input){
+//         for(let i = 0 ; i < input.length; i++){
+//             if(!isNaN(parseFloat(input.slice(i,1))))
+//                 let num = ""
+//                 num =+ input[i]
+//             return   num/ (i+1);
+//         }
+//         else{
+//                 return false;
+//             }
+//     }
+// }
+// average(["6", 5, 3, 2, 9])
 
 
+//----------sol 1
+function isNumeric(input){
+    return !isNaN(parseFloat(input));
+}
+//
+// //==sol 1
+//
+// function average(arr){
+//     let i = 0;
+//     let sum = 0;
+//     while(i < arr.length){
+//         sum += parseFloat(arr[i]);
+//         i++
+//     }
+//     return sum/arr.length
+// }
 
 
-
-
-
-
-
+//-----------for loop
+function average(input){
+    let sum = 0;
+    for(let i = 0; i < input.length; i++){
+        if (isNumeric(input[i])){
+            sum += parseFloat(input[i])
+        }else {
+            return false;
+        }
+    }
+}
+average();
