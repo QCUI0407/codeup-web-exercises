@@ -1,0 +1,78 @@
+/* Element selector */
+h1 {
+    /* rgba(red, green, blue, %opacity) */
+    color: rgba(125,179,66, 0);
+}
+
+/* Class selector */
+.underline {
+    text-decoration: underline;
+    /* Does not show on p tag due to #font24 selector being more specific */
+    color: brown;
+}
+
+/* ID selector */
+#font24 {
+    /* Color property takes priority over class selector */
+    color: hotpink;
+    font-size: 24px;
+}
+
+/* Multiple Selectors - comma separated */
+h2, h3, h4 {
+    color: hotpink;
+    font-family: Comic Sans MS, sans-serif;
+}
+
+p, .underline {
+    background-color: orange;
+}
+
+.national-parks {
+    color: rebeccapurple;
+}
+
+/* Descendant Selector - separated by a space */
+#lists .national-parks {
+    color: forestgreen;
+}
+
+/* Direct Child Selector - separated by > */
+#lists>div>.colors {
+    color: coral;
+}
+
+li.highlight {
+    font-weight: bold;
+}
+
+/* unvisited link (:link) */
+a:link {
+    color:red;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:black;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:blue;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
+}
+
+.teambuilding {
+    background-image: url("../img/pic2.jpg");
+    background-size: cover;
+    /*Units of measurement = em, vw, vh, px, rem, % */
+    height: 30vh;
+    width: 40vw;
+}
+
+
+

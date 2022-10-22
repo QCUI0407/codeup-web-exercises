@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Forms</title>
+</head>
+<body>
+<!--<form method="POST" action="https://request-inspector.glitch.me/?name=Jay">-->
+
+<!--  <label for="username">Username</label>-->
+<!--  <input id="username" name="userFirstName" type="text">-->
+<!--  <br>-->
+
+<!--  <label for="password">Password</label>-->
+<!--  <input id="password" name="password" type="password">-->
+<!--  <br>-->
+
+<!--&lt;!&ndash;  <input type="submit">&ndash;&gt;-->
+<!--    <button>Submit</button>-->
+<!--</form>-->
+
+<!--<form action="https://request-inspector.glitch.me" method="GET">-->
+<!--    <label for="zipcode">Zipcode</label>-->
+<!--    <input type="text" name="zipcode" id="zipcode" placeholder="input a zipcode" value="78213">-->
+<!--    <label for="password">Password</label>-->
+<!--    <input type="password" id="password">-->
+<!--    <label for="datetime">Date/Time</label>-->
+<!--    <input type="datetime-local" name="datetime" id="datetime">-->
+<!--    &lt;!&ndash;User does not interact with hidden inputs&ndash;&gt;-->
+<!--    <input type="hidden" name="user_id" value="Icon Cohort">-->
+<!--    <label for="tweet">Tweet:</label>-->
+<!--    <textarea id="tweet" cols="20" rows="10" name="tweet" style="resize: none"></textarea>-->
+<!--    <label for="email">Email</label>-->
+<!--    <input type="email" name="email" id="email" required>-->
+<!--    <input type="file" name="fileUpload">-->
+<!--    -->
+<!--    <button type="submit">Search</button>-->
+<!--</form>-->
+
+<form action="https://request-inspector.glitch.me" method="POST">
+  <label for="username">Name:</label>
+  <input type="text" name="username" id="username" placeholder="Enter your name here.">
+  <label for="email">Email:</label>
+  <input type="email" name="email" id="email" placeholder="example@domain.com">
+  <p>What is your favorite color?</p>
+  <label for="blue">Blue</label>
+  <input type="radio" name="favcolor" id="blue" value="blue" checked>
+  <label for="red">Red</label>
+  <input type="radio" name="favcolor" id="red" value="red">
+  <label for="yellow">Yellow</label>
+  <input type="radio" name="favcolor" id="yellow" value="yellow">
+  <label for="randomNumber">Pick a Number!</label>
+  <input type="number" name="randomNumber" id="randomNumber">
+  <br>
+  <br>
+  <p>What languages do you know?</p>
+  <label for="html">HTML</label>
+  <input type="checkbox" name="languages" id="html" value="HTML" checked>
+  <label for="java">Java</label>
+  <input type="checkbox" id="java" name="languages" value="Java">
+  <label for="javascript">JavaScript</label>
+  <input type="checkbox" id="javascript" name="languages" value="JavaScript">
+  <br>
+  <label for="pizzaTopping">Pick a Pizza Topping!</label>
+  <select name="pizzaTopping" id="pizzaTopping">
+    <option value="p">Pepperoni</option>
+    <option value="c">Cheese</option>
+    <option value="s">Sausage</option>
+    <option value="Bacon">Bacon</option>
+    <option value="Pineapple">Pineapple</option>
+    <option value="Mushrooms">Mushrooms</option>
+    <option value="Margherita">Margherita</option>
+    <option value="Kiwi">Kiwi</option>
+    <option value="Spinach" disabled>Spinach</option>
+  </select>
+  <label for="volume"></label>
+  <input type="range" min="0" max="5" name="volume" id="volume">
+  <button type="submit">Submit</button>
+</form>
+</body>
+</html>
