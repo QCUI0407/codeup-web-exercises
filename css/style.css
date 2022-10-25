@@ -1,4 +1,40 @@
 .fancy-header {
     color: purple; /* single line comment */
     text-decoration: underline;
+    text-align: center;
 }
+
+h2 {
+    text-decoration: underline;
+    color: purple;
+}
+
+html{
+    background-color: blanchedalmond;
+    background-image: url("https://i.etsystatic.com/21337046/r/il/8caf0b/2311342033/il_1588xN.2311342033_74ab.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: 'Dancing Script', cursive;
+}
+
+ul{
+    list-style: square;
+}
+
+table{
+    font-size: 25px;
+    padding: 20px;
+}
+
+a:link{
+    collapse: red;
+}
+
+a:hover{
+    color: magenta;
+}
+
+a:visited{
+    color: olivedrab;
+}
+
