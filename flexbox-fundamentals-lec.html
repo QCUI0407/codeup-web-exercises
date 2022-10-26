@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flexbox-fundamentals</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Basics Examples</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Helvetica, sans-serif;
+      font-weight: bold;
+    }
+
+    /*.flex-container {*/
+    /*    height: 50vh;*/
+    /*    width: 100%;*/
+    /*    border: 3px solid goldenrod;*/
+    /*    display: flex;*/
+    /*    !* Column main axis = y, Row main axis = x *!*/
+    /*    flex-direction: row;*/
+    /*    flex-wrap: wrap;*/
+    /*    !* Center items on the MAIN AXIS *!*/
+    /*    justify-content: center;*/
+    /*    !* Center items on the CROSS AXIS *!*/
+    /*    align-items: center;*/
+    /*    !* change spacing on CROSS AXIS *! */
+    /*    align-content: space-evenly
+    /*}*/
+    /*.flex-item {*/
+    /*    background: #BFD45D;*/
+    /*    border: 2px solid #F9EFD6;*/
+    /*    padding: 1em;*/
+    /*}*/
+
+    .flex-container {
+      display: flex;
+      border: 5px solid goldenrod;
+      flex-direction: column;
+      height: 50vh;
+    }
+
+    .box1 {
+      background: #BFD45D;
+      border: 2px solid #F9EFD6;
+      padding: 1em;
+      /*order: 2;*/
+      /*flex-grow: 1*/
+    }
+
+    .box2 {
+      background: #BFD45D;
+      border: 2px solid #F9EFD6;
+      padding: 1em;
+      /*order: 3;*/
+    }
+
+    .box3 {
+      background: #BFD45D;
+      border: 2px solid #F9EFD6;
+      padding: 1em;
+      /*order: 1*/
+      /*flex-grow: 1;*/
+      /*align-self: flex-start;*/
+    }
+
+    .box4 {
+      background: #BFD45D;
+      border: 2px solid #F9EFD6;
+      padding: 1em;
+      /*order: 5*/
+    }
+
+    .box5 {
+      background: #BFD45D;
+      border: 2px solid #F9EFD6;
+      padding: 1em;
+      /*order: 4*/
+    }
+  </style>
+</head>
+<body>
+
+<div class="flex-container">
+  <div class="flex-item box1">Item 1</div>
+  <div class="flex-item box2">Item 2</div>
+  <div class="flex-item box3">Item 3</div>
+  <div class="flex-item box4">Item 4</div>
+  <div class="flex-item box5">Item 5</div>
+</div>
+
+</body>
+</html>
+</body>
+</html>

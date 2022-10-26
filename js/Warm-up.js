@@ -46,32 +46,32 @@ if string[i] === /[a-z]/ return true
 // inBetween(25, 26, 25) returns false
 // inBetween(0, 1, 0.5) returns true
 
-function inBetween(min,max,num){
+// function inBetween(min,max,num){
     // let boolean;
     // if(num>min && num <max){
     //     boolean = true;
     //     return boolean;
     //     //return true;
     // }
-        return num<max && num>min;
-}
-inBetween(4,6,5);
+//         return num<max && num>min;
+// }
+// inBetween(4,6,5);
 
 // Morning Warm-Up:
 //
 // Create a function named "typePrinter" that accepts an array as an input, and logs the data type of each element to the console.
 //
-    let arr = [true, "Icon", 25, "66", false, 0];
-
-
-
-function typePrinter(userArr){
-        for(let i = 0; i<userArr.length; i++){
-                console.log(typeof userArr[i]);
-        }
-}
-
-typePrinter(arr);
+//     let arr = [true, "Icon", 25, "66", false, 0];
+//
+//
+//
+// function typePrinter(userArr){
+//         for(let i = 0; i<userArr.length; i++){
+//                 console.log(typeof userArr[i]);
+//         }
+// }
+//
+// typePrinter(arr);
 
 
 
@@ -103,9 +103,9 @@ typePrinter(arr);
 
 
 //----------sol 1
-function isNumeric(input){
-    return !isNaN(parseFloat(input));
-}
+// function isNumeric(input){
+//     return !isNaN(parseFloat(input));
+// }
 //
 // //==sol 1
 //
@@ -121,14 +121,52 @@ function isNumeric(input){
 
 
 //-----------for loop
-function average(input){
-    let sum = 0;
-    for(let i = 0; i < input.length; i++){
-        if (isNumeric(input[i])){
-            sum += parseFloat(input[i])
-        }else {
-            return false;
+// function average(input){
+//     let sum = 0;
+//     for(let i = 0; i < input.length; i++){
+//         if (isNumeric(input[i])){
+//             sum += parseFloat(input[i])
+//         }else {
+//             return false;
+//         }
+//     }
+// }
+// average();
+
+
+
+// Warm-up:
+//
+// Create a function named "filterNegativity" that accepts an array of numbers, and returns an array with only positive numbers.
+//
+//     Ex: filterNegativity([5, -6, 2, 0, -5, -13]) // returns [5, 2, 0,]
+
+function filterNegativity(arr){
+    for(let i=0;i < arr.length; i++){
+        if(arr[i] < 0){
+            arr.splice(i,1);
+            i--;
+        }
+    }return arr
+}
+
+console.log(filterNegativity([5, -6, 2, 0, -5,-13]))
+
+//-----solution 2
+const filterNegativity = (arr) => {
+    let positiveArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if(arr[i] >= 0) {
+            positiveArr.push(arr[i]);
         }
     }
+    return positiveArr;
 }
-average();
+
+console.log(filterNegativity([5, -6, 2, 0, -5, -13]));
+
+
+
+
+
+
