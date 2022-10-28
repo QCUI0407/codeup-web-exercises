@@ -341,31 +341,31 @@
 // Example: getIndexesOf("z", "banana") should return an empty array [] since there are no "z" characters in "banana"
 
 
-function getIndexesOf(input, str){
-   let indexNum = ""
-   let i = 0;
-   while (i < str.length){
-      console.log(str.charAt(i));
-      if(input === str.charAt(i)){
-         indexNum += i;
-      }
-      if(indexNum === ""){
-         return []
-      }
-      ++i
-   }return indexNum.split("");
-   for(let i = 0; i < str.length; i++) {
-      console.log(str.charAt(i));
-      if(input === str.charAt(i)){
-         indexNum += i;
-      }
-   }
-   if(indexNum === ""){
-      return []
-   }
-   return indexNum.split("");
-}
-console.log(getIndexesOf("a", "banana"))
+// function getIndexesOf(input, str){
+//    let indexNum = ""
+//    let i = 0;
+//    while (i < str.length){
+//       console.log(str.charAt(i));
+//       if(input === str.charAt(i)){
+//          indexNum += i;
+//       }
+//       if(indexNum === ""){
+//          return []
+//       }
+//       ++i
+//    }return indexNum.split("");
+//    for(let i = 0; i < str.length; i++) {
+//       console.log(str.charAt(i));
+//       if(input === str.charAt(i)){
+//          indexNum += i;
+//       }
+//    }
+//    if(indexNum === ""){
+//       return []
+//    }
+//    return indexNum.split("");
+// }
+// console.log(getIndexesOf("a", "banana"))
 
 // Exercise 9. Write a function named removeAll.
 // It should accept an array and a value
@@ -375,13 +375,13 @@ console.log(getIndexesOf("a", "banana"))
 // Example: removeAll([1, 2, 3], 2) should return [1, 3]
 // Example 2: removeAll([2, 2, 3, 4, 5, 2, 2], 2) should return [3, 4, 5]
 
-function removeAll(arr, num){
-   for(let i = 0; i < arr.length; i++){
-      if(arr[i] == num){
-         arr.splice(i, 1);
-      }
-   }
-}
+// function removeAll(arr, num){
+//    for(let i = 0; i < arr.length; i++){
+//       if(arr[i] == num){
+//          arr.splice(i, 1);
+//       }
+//    }
+// }
 // function getUniqueValues(arr){
 //    for(let i = 0; i < arr.length; i++){
 //       for(let j = i+1; j < arr.length; j++){
@@ -396,6 +396,11 @@ function removeAll(arr, num){
 
 
 // Exercise 10. Write a function named firstTenFibonacciNumbers() that returns an array of the first ten fibonacci numbers
+// function firstTenFibonacciNumbers(){
+//    for (let i = 0; i < )
+// }
+//
+
 
 // Exercise 11. Write a function named getNFibonacci(n) that returns an array containing the first n fibonacci numbers
 
@@ -408,4 +413,13 @@ function removeAll(arr, num){
 // Zip returns a new array of arrays where each element is an array of the two elements at the same index
 // Example: zip([1, 2, 3], [4, 5, 6]) returns [[1, 4], [2, 5], [3, 6])
 // Example: zip(["a", "b", "c"], ["x", "y", "z"]) returns [["a", "x"], ["b", "y"], ["c", "z"]]
+function zip(arr, arr1){
+   let zipArr = []
+   for(let i = 0; i < arr.length; i++){
+      for(let j = 0; j < arr1.length; j++){
+      }
+      zipArr = [arr[i] +arr1[i]];
+   }return zipArr
+}
 
+console.log(zip(["a", "b", "c"], ["x", "y", "z"]));
