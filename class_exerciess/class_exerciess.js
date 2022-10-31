@@ -416,10 +416,8 @@
 function zip(arr, arr1){
    let zipArr = []
    for(let i = 0; i < arr.length; i++){
-      for(let j = 0; j < arr1.length; j++){
-      }
-      zipArr = [arr[i] +arr1[i]];
+       let zipArr1 = [arr[i], arr1[i]];
+      zipArr = zipArr.concat([zipArr1])
    }return zipArr
 }
-
 console.log(zip(["a", "b", "c"], ["x", "y", "z"]));
