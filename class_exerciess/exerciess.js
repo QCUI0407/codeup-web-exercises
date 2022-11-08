@@ -396,28 +396,210 @@
 
 
 // Exercise 10. Write a function named firstTenFibonacciNumbers() that returns an array of the first ten fibonacci numbers
-// function firstTenFibonacciNumbers(){
-//    for (let i = 0; i < )
-// }
+
+
+// let fibonacci_series = function firstTenFibonacciNumbers(n)
+// {
+//     if (n===1)
+//     {
+//         return [0, 1];
+//     }
+//     else
+//     {
+//         let s = fibonacci_series(n - 1);
+//         s.push(s[s.length - 1] + s[s.length - 2]);
+//         return s;
+//     }
+// };
 //
+// console.log(fibonacci_series(9));
 
 
 // Exercise 11. Write a function named getNFibonacci(n) that returns an array containing the first n fibonacci numbers
+
+// Define a function named incrementItems that takes in an array, add 1 to every element in the array.
+
+function incrementItems(arr){
+    for(let i = 0; i <= arr.length-1; i++){
+        arr.splice(i,1,Number(arr[i])+1)
+    }return arr
+}
+console.log(incrementItems(["1",2,3,4,5,6,7]))
 
 // Exercise 12. Write a function named moveFirstToLast() that takes in an array
 // the function should return the array with the first element at the end
 // Example: moveFirstToLast([1, 2, 3, 4]) should return [2, 3, 4, 1]
 
+// function moveFirstToLast(arr){
+//   return arr.concat(arr.splice(0,1))
+// }
+//
+// console.log(moveFirstToLast([1, 2, 3, 4]))
 
 // Exercise 13. Write a function named zip() that takes in two arrays with the same number of elements
 // Zip returns a new array of arrays where each element is an array of the two elements at the same index
 // Example: zip([1, 2, 3], [4, 5, 6]) returns [[1, 4], [2, 5], [3, 6])
 // Example: zip(["a", "b", "c"], ["x", "y", "z"]) returns [["a", "x"], ["b", "y"], ["c", "z"]]
-function zip(arr, arr1){
-   let zipArr = []
-   for(let i = 0; i < arr.length; i++){
-       let zipArr1 = [arr[i], arr1[i]];
-      zipArr = zipArr.concat([zipArr1])
-   }return zipArr
+
+// function zip(arr, arr1){
+//    let zipArr = []
+//    for(let i = 0; i < arr.length; i++){
+//        let zipArr1 = [arr[i], arr1[i]];
+//       zipArr = zipArr.concat([zipArr1])
+//    }return zipArr
+// }
+// console.log(zip(["a", "b", "c"], ["x", "y", "z"]));
+
+"use strict";
+
+/**
+ * Write your solutions here
+ *
+ * **Note**: While normally it is good practice to wrap your javascript in an
+ * immediately invoked function expression (iife), you should _not_ do that
+ * here. If you do, the automated tests will not be able to see your functions.
+ */
+//1. Write a function named isNegative that accepts a number and returns true or false based on whether the input is negative.
+function isNegative(num){
+    if(num < 0){
+        return true;
+    }else{
+        return false;
+    }
 }
-console.log(zip(["a", "b", "c"], ["x", "y", "z"]));
+//2. Write a function named isTen that accepts a number and returns a boolean that indicates whether or not that number is equal to 10.
+function isTen(num){
+    if(num === 10){
+        return true;
+    }else{
+        return false;
+    }
+}
+// 3.Write a function named double that accepts a number and returns the number doubled
+function double(num){
+    return num * 2;
+}
+
+// 4.Write a function named remove9s that accepts an array of numbers and returns an array with all the same numbers except for 9.
+function remove9s(arr){
+    // let value = 9
+    // arr =arr.filter(function(item) {
+    //     return item !== value
+    // })
+    // return arr
+    let value =[];
+    arr.forEach(function (item){
+        if(item !== 9){
+            value.push(item);
+        }
+    })
+    return value;
+}
+
+
+//5. Write a function named average that accepts an array of numbers and returns the average of those numbers.
+
+function average(arr) {
+    let total = 0;
+    let count = 0;
+    arr.forEach(function(item) {
+        total += item;
+        count++;
+    });
+    return total / count;
+}
+// 6.Write a function named countOdds that accepts an array of numbers and returns the number of odd numbers in the array.
+
+function countOdds(array){
+    // return array.filter(item => item % 2 != 0).length;
+    let numOdds = 0;
+    array.forEach(function (num){
+        if(num !== 0){
+            numOdds++;
+        }
+    })
+    return numOdds;
+}
+
+// 7.Write a function named averageSales that accepts an array of objects where each object represents a person, and has a sales property. The function should return the average of every object's sales property.
+
+function averageSales(arr){
+    let total = 0;
+    for(let i=0;i<arr.length;i++){
+        total = arr[i].sales + total;
+    }return total/arr.length
+}
+
+// 8.Write a function named convertNameToObject that accepts a string that contains a first name and last name separated by a space character, and returns an object with properties firstName and lastName.
+function convertNameToObject(str){
+    let strArr = str.split(" ")
+    let strObj = {
+        firstName:strArr[0],
+        lastName:strArr[1],
+    }
+    return strObj;
+}
+
+//9. Write a function named countVowels that accepts a string and returns the number of vowels in that string. (Don't worry about or count "y" as a vowel)
+
+function countVowels(str) {
+    // const vowels = ["a", "e", "i", "o", "u"]
+    // let count = 0;
+    // for (let letter of str.toLowerCase()) {
+    //     if (vowels.includes(letter)) {
+    //         count++;
+    //     }
+    // }
+    // return count
+    let sumVols = 0;
+    let vols = ["a", "e", "i", "o", "u"];
+    str.toLowerCase();
+    str.split("").forEach(function (item){
+        vols.forEach(function (vol){
+            if(item === vols){
+                sumVols++;
+            }
+        })
+    })
+    return sumVols;
+}
+
+// 10.Write a function named analyzeWord. It should take in a string and return an object with information about the input word. The object returned should have the following properties:
+
+function analyzeWord(str){
+    let strCount = str.split("").length
+    const vowels = ["a", "e", "i", "o", "u"]
+    let vowelsCount = 0;
+    for (let letter of str.toLowerCase()) {
+        if (vowels.includes(letter)) {
+            vowelsCount++;
+        }
+    }
+    let obj = {
+        word:str,
+        numberOfLetters: strCount,
+        numberOfVowels: vowelsCount,
+    }
+    return obj;
+}
+
+// 11.Write a function named capitalizeName that accepts a string that is a first and last name separated by a space, and returns a string that that has the first and last names capitalized.
+//
+function capitalizeName(str) {
+    // let arr = str.split(" ");
+    // arr = arr.map(element => {
+    //     return element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
+    // });
+    // arr.splice(1, 0, " ")
+    // return arr.join("")
+    let names = str.split("");
+    let firstName = names[0].charAt(0).toUpperCase() + names[0].slice(1).toLowerCase();
+    let lastName = names[1].charAt(0).toUpperCase() + names[1].slice(1).toLowerCase();
+    return firstName + " " + lastName;
+}
+
+
+
+
+
+

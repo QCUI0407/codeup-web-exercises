@@ -1,0 +1,10 @@
+.pizza-img{
+    background-image: url("../img/pizza.png");
+    height: 346px;
+    background-size: cover;
+}
+.display-4{
+    display: flex;
+    justify-content: center;
+    padding-top:2.5em;
+}

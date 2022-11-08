@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/custom.css">
+    <title>Pizza Order</title>
+</head>
+
+<body>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+<!-- header nav -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Pizza World</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active text-nowrap" aria-current="page" href="#">Order Online</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Menu</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2 placeholder col-6 bg-light" type="search" placeholder="Zip Code"
+                       aria-label="Search">
+                <button class="btn btn-outline-success text-nowrap" type="submit">Search stores near you!</button>
+            </form>
+            <div class="container d-flex justify-content-end">
+                <a class="navbar-brand" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                         class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    </svg>&nbsp;&nbsp; Sign Up!
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<section>
+    <!-- image -->
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid pizza-img">
+            <h1 class="display-4">Welcome</h1>
+        </div>
+    </div>
+    <h2>Build your own pizza!</h2>
+    <!-- Bulid pizza nav-->
+
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-size-tab" data-bs-toggle="tab" data-bs-target="#nav-size"
+                    type="button" role="tab" aria-controls="nav-size" aria-selected="true"><span
+                    class="badge bg-secondary">1</span>&nbsp;Size
+                and Crust
+            </button>
+            <button class="nav-link" id="nav-cheese-tab" data-bs-toggle="tab" data-bs-target="#nav-cheese"
+                    type="button" role="tab" aria-controls="nav-cheese" aria-selected="false"><span
+                    class="badge bg-secondary">2</span>&nbsp;Cheese and Sauce
+            </button>
+            <button class="nav-link" id="nav-topping-tab" data-bs-toggle="tab" data-bs-target="#nav-topping"
+                    type="button" role="tab" aria-controls="nav-topping" aria-selected="false"><span
+                    class="badge bg-secondary">3</span>&nbsp;Toppings
+            </button>
+        </div>
+    </nav>
+    <!-- size -->
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-size" role="tabpanel" aria-labelledby="nav-size-tab">
+            <div class="list-group">
+                <a class="list-group-item list-group-item-action active" aria-current="true">
+                    Choose Size and Crust
+                </a>
+            </div>
+            <div class="list-group">
+                <a class="list-group-item list-group-item-action list-group-item list-group-item-secondary">Hand
+                    Tossed</a>
+                <a class="list-group-item list-group-item-action ">Garlic seasoned crust with a rich, buttery
+                    taste.</a>
+                <label class="list-group-item">
+                    <input class="form-check-input me-1" type="radios" value="">
+                    Small(10")
+                </label>
+                <label class="list-group-item">
+                    <input class="form-check-input me-1" type="radios" value="">
+                    Medium(12")
+                </label>
+            </div>
+            <br>
+            <div class="list-group">
+                <a class="list-group-item list-group-item-action list-group-item list-group-item-secondary">Cripsy
+                    Thin</a>
+                <a class="list-group-item list-group-item-action ">Thin enough for optimum cripsy to crunchy
+                    ratio.</a>
+                <label class="list-group-item">
+                    <input class="form-check-input me-1" type="radios" value="">
+                    Medium(12")
+                </label>
+                <label class="list-group-item">
+                    <input class="form-check-input me-1" type="radios" value="">
+                    Large(14")
+                </label>
+            </div>
+        </div>
+        <!-- cheese -->
+        <div class="tab-pane fade" id="nav-cheese" role="tabpanel" aria-labelledby="nav-cheese-tab">
+            <div class="list-group">
+                <a class="list-group-item list-group-item-action active" aria-current="true">
+                    Choose Cheese and Sauce
+                </a>
+            </div>
+            <div class="list-group">
+                <a class="list-group-item list-group-item-action list-group-item list-group-item-secondary">Cheese</a>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item fs-4">How Much?
+                        <select class="form-select m-1" aria-label="Default select example">
+                            <option value="1">None</option>
+                            <option value="1">Light</option>
+                            <option selected>Normal</option>
+                            <option value="1">Extra</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <div class="list-group">
+            <a class="list-group-item list-group-item-action list-group-item list-group-item-secondary">Sauce</a>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item fs-4">What Type?
+                    <select class="form-select m-1" aria-label="Default select example">
+                        <option value="1">Tomato</option>
+                        <option value="1">Marinara</option>
+                        <option selected>BBQ</option>
+                        <option value="1">Alfredo</option>
+                    </select>
+                </li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item fs-4">How Much?
+                    <select class="form-select m-1" aria-label="Default select example">
+                        <option value="1">Light</option>
+                        <option value="1">Normal</option>
+                        <option selected>Extra</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <!-- Topping -->
+    <div class="tab-pane fade" id="nav-topping" role="tabpanel" aria-labelledby="nav-topping-tab">
+        <a class="list-group-item list-group-item-action list-group-item list-group-item-secondary">Choose Meats</a>
+        <div class="list-group">
+            <a class="list-group-item list-group-item-action active" aria-current="true">
+                Choose Topping
+            </a>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"> Beef
+            </li>
+            <li class="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"> Ham
+            </li>
+            <li class="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input">
+                Philly Steak
+            </li>
+            <li class="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"> Bacon
+            </li>
+        </ul>
+        <a class="list-group-item list-group-item-action list-group-item list-group-item-secondary">Choose
+            NoN-Meats</a>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input"> Green
+                Peppers
+            </li>
+            <li class="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input">
+                Mushrooms
+            </li>
+            <li class="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input">
+                Onions
+            </li>
+            <li class="list-group-item"><input type="checkbox" aria-label="Checkbox for following text input">
+                Jalepeño Peppers
+            </li>
+        </ul>
+    </div>
+    </div>
+    </div>
+    <!-- footer -->
+    <div class="card-footer bg-danger bg-opacity-10 border border-light border-start-0 border-end-0">
+        <button type="button" class="btn btn-primary float-end">Checkout
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+        </button>
+    </div>
+</section>
+
+</body>
+
+</html>
