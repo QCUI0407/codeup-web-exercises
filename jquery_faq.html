@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery_faq</title>
+  <style>
+    .invisible{
+        visibility: hidden;
+    }
+    .blueColor{
+        background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+      <p>Cryptids of Cornwall:</p>
+
+      <dl>
+        <dt>Beast of Bodmin</dt>
+        <dd class="invisible">A large feline inhabiting Bodmin Moor.</dd>
+
+        <dt>Morgawr</dt>
+        <dd class="invisible">A sea serpent.</dd>
+
+        <dt>Owlman</dt>
+        <dd class="invisible">A giant owl-like creature.</dd>
+
+        <dt>444444</dt>
+        <dd class="invisible">four four four</dd>
+
+
+        <dt>555555</dt>
+        <dd class="invisible">five five five</dd>
+
+        <dt>666666</dt>
+        <dd class="invisible">six six six</dd>
+
+        <dt>777777</dt>
+        <dd class="invisible">seven seven seven</dd>
+
+        <dt>888888</dt>
+        <dd class="invisible">eight eight eight</dd>
+
+        <dt>999999</dt>
+        <dd class="invisible">nine nine nine</dd>
+
+        <dt>0000000</dt>
+        <dd class="invisible">zero zero zero</dd>
+      </dl>
+      <button type="button">toggle</button>
+      <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script>
+  $( "dt" ).click(function() {
+    $( "dd" ).toggleClass('invisible');
+  });
+
+  $('dt').click(function (){
+      $(this).toggleClass("blueColor")
+  })
+</script>
+</body>
+</html>
