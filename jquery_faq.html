@@ -8,7 +8,7 @@
         visibility: hidden;
     }
     .blueColor{
-        background-color: yellow;
+        background-color: deeppink;
     }
   </style>
 </head>
@@ -47,16 +47,47 @@
         <dt>0000000</dt>
         <dd class="invisible">zero zero zero</dd>
       </dl>
-      <button type="button">toggle</button>
+      <h3> park No.1</h3>
+      <ul>
+          <li>1-No.1</li>
+          <li>2-N0.1</li>
+          <li>3-No.1</li>
+      </ul>
+      <h3> park No.2</h3>
+      <ul>
+          <li>1-No.2</li>
+          <li>2-N0.2</li>
+          <li>3-No.2</li>
+      </ul>
+      <h3> park No.3</h3>
+      <ul>
+          <li>1-No.3</li>
+          <li>2-N0.3</li>
+          <li>3-No.3</li>
+      </ul>
+        <button id="bg-yellow">last li bg-yellow</button>
+        <button id="tog" type="button">toggle</button>
       <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script>
-  $( "dt" ).click(function() {
+  $( "#tog" ).click(function() {
     $( "dd" ).toggleClass('invisible');
   });
 
   $('dt').click(function (){
       $(this).toggleClass("blueColor")
-  })
+  });
+
+  $('#bg-yellow').click(function (){
+      $('ul li:last-child').css("background-color", "yellow");
+  });
+  $('h3').click(function (){
+      $(this).next().children().css("font-weight","bold");
+  });
+  $('li').click(function (){
+      $(this).siblings().first().css("color","blue");
+  });
+
+
 </script>
 </body>
 </html>
