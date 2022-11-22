@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mapbox_maps_api</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            display: flex;
+            margin: 2em 10em;
+            height: 900px;
+        }
+    </style>
+</head>
+<body>
+<h1>Favorite Restaurant</h1>
+<label for="zoom">Choose you zoom level</label>
+<select name="zoom" id="zoom">
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="15">15</option>
+</select>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<!-- Mapbox JS -->
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<script src = "js/keys.js"></script>//get token
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+
+
+<script>
+    var accessToken = MAPBOX_TOKEN;
+
+    mapboxgl.accessToken = accessToken;
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        //22.308889, -157.826111
+        center: [-157.826111, 21.458889]
+    });
+    //zoom select
+    $("#zoom").change(function () {
+        let num = $(this).val();
+
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: num,
+            //22.308889, -157.826111
+            center: [-157.826111, 21.458889]
+        });
+    });
+
+
+    var suShiII = {
+        address: "655 Ke’eaumoku St #109, Honolulu, HI 96814",
+        popupHTML: "<p>SuShi II</p>"
+    };
+    var fookYuen = {
+        address: "1960 Kapiolani Blvd, Honolulu, HI 96826",
+        popupHTML: "<p>Fook Yuen Seafood Restaurant</p>"
+    };
+    var SimplySichuan = {
+        address: "100 N Beretania St #107, Honolulu, HI 96817",
+        popupHTML: "<p>Simply Sichuan</p>"
+    };
+
+    let restaurants = [suShiII,fookYuen, SimplySichuan];
+
+    function placeMarkerAndPopup(info, token, map) {
+        geocode(info.address, token).then(function(coordinates) {
+            var popup = new mapboxgl.Popup()
+                .setHTML(info.popupHTML);
+            var marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map)
+                .setPopup(popup);
+            popup.addTo(map);
+        });
+    }
+    restaurants.forEach(function (restaurant){
+        placeMarkerAndPopup(restaurant,accessToken, map);
+    })
+
+
+</script>
+
+
+
+
+</body>
+</html>
