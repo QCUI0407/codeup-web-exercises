@@ -7,12 +7,13 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
     <!-- Custom CSS -->
     <style>
+
         #map {
-            /* the width and height may be set to any size */
-            display: flex;
-            margin: 2em 10em;
-            height: 900px;
-        }
+                     position: absolute;
+                     top: 15em;
+                     bottom: 0;
+                     width: 100%;
+                 }
     </style>
 </head>
 <body>
@@ -23,13 +24,19 @@
     <option value="10">10</option>
     <option value="15">15</option>
 </select>
+<form>
+    <label for="address">Address</label>
+    <input type="text" id="address" name="address"><br>
+    <input type="submit" value="Submit" id="search">
+</form>
 
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
 
 <!-- Mapbox JS -->
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-<script src = "js/keys.js"></script>//get token
+<!--get token-->
+<script src = "js/keys.js"></script>
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 
@@ -43,22 +50,28 @@
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
         zoom: 10,
-        //22.308889, -157.826111
-        center: [-157.826111, 21.458889]
+        //21.314941384908394, -157.82228208979285
+        center: [-157.82228208979285, 21.314941384908394]
     });
     //zoom select
-    $("#zoom").change(function () {
-        let num = $(this).val();
 
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v9',
-            zoom: num,
-            //22.308889, -157.826111
-            center: [-157.826111, 21.458889]
-        });
+    document.getElementById('zoom').addEventListener('change', (e) => {
+        let zoomNum = e.target.value;
+        map.zoomTo(zoomNum, { duration: 3000 });
     });
 
+    document.getElementById("search").addEventListener('onclick',function (){
+        var $address = $('#address').val();
+        geocode($address, MAPBOX_TOKEN).then(function(coordinates) {
+            var popup = new mapboxgl.Popup()
+                .setHTML("find it");
+            var marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map)
+                .setPopup(popup);
+            popup.addTo(map);
+        });
+    })
 
     var suShiII = {
         address: "655 Ke’eaumoku St #109, Honolulu, HI 96814",
