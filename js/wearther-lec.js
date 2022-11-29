@@ -7,58 +7,141 @@ let humidity = document.querySelectorAll(".humidity");
 let wind = document.querySelectorAll(".wind");
 let pressure = document.querySelectorAll(".pressure");
 let icon = document.querySelectorAll(".icon");
+//----map DOM----
+const searchInput = document.querySelector("#search-input")
+const searchBtn = document.querySelector("#search-btn")
+
+//------------------------map--------------
+function geocode(search, MAPBOX_TOKEN) {
+    var baseUrl = 'https://api.mapbox.com';
+    var endPoint = '/geocoding/v5/mapbox.places/';
+    return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + MAPBOX_TOKEN)
+        .then(function (res) {
+            return res.json();
+            // to get all the data from the request, comment out the following three lines...
+        }).then(function (data) {
+            return data.features[0].center;
+        });
+}
+
 //Current city weather
-window.addEventListener('load',() =>{
-    // console.log(dateShow);
-    // console.log(summary);
-    if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition((position)=>{
-            console.log(position);
+window.addEventListener('load', () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
             lon = position.coords.longitude;
-            console.log(lon);
             lat = position.coords.latitude;
-            console.log(lat);
-            let web = "http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + OPEN_WEATHER_APPID +"&units=imperial";
+            let web = "http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + OPEN_WEATHER_APPID + "&units=imperial";
             fetch(web).then(
-                (response)=>{
+                (response) => {
                     return response.json();
                 }
-            ).then((data)=>{
-                console.log(data);
-                currentCity[0].textContent = "Current city: "+data.city.name;
+            ).then((data) => {
+                //console.log(data);
+                currentCity[0].textContent = "Current city: " + data.city.name;
                 let count = 0;
-                for(let i=0; i < 40;i+=8){
+                for (let i = 0; i < 40; i += 8) {
                     dateShow[count].textContent = data.list[i].dt_txt;
-                    temperature[count].textContent = data.list[i].main.temp+" °F";
+                    temperature[count].textContent = data.list[i].main.temp_min + " °F";
                     summary[count].textContent = data.list[i].weather[0].description.toUpperCase();
-                    humidity[count].textContent = "Humidity: " + data.list[i].main.humidity +"%";
+                    humidity[count].textContent = "Humidity: " + data.list[i].main.humidity + "%";
                     wind[count].textContent = "Wind: " + data.list[i].wind.speed;
-                    pressure[count].textContent = "Pressure: "+ data.list[i].main.pressure;
+                    pressure[count].textContent = "Pressure: " + data.list[i].main.pressure;
                     let iconShow = data.list[i].weather[0].icon;
                     icon[count].innerHTML =
                         `<img src=" http://openweathermap.org/img/wn/${iconShow}.png" style= 'height:5rem'/>`;
                     count++;
                 }
+                //-------------------------add map-------------------------------------
                 mapboxgl.accessToken = MAPBOX_TOKEN;
                 const map = new mapboxgl.Map({
                     container: 'map', // container ID
                     style: 'mapbox://styles/mapbox/streets-v9', // style URL
-                    center: [lon,lat],
+                    center: [lon, lat],
                     zoom: 10,
                 });
+                //---------------add marker
+                const marker = new mapboxgl.Marker({
+                    draggable: true
+                })
+                    .setLngLat([lon, lat])
+                    .addTo(map);
+//------------------------call weather after drag-------
+                function onDragEnd(){
+                    const lngLat = marker.getLngLat();
+                    map.setCenter(lngLat);
+                    map.zoomTo(15, { duration: 3000 });
+                    //console.log(lngLat.lng);
+                    lngD = lngLat.lng;
+                    latD = lngLat.lat;
+                    let webD = "http://api.openweathermap.org/data/2.5/forecast?lat=" + latD + "&lon=" + lngD + "&appid=" + OPEN_WEATHER_APPID + "&units=imperial";
+                    fetch(webD).then(
+                        (response) => {
+                            return response.json();
+                        }
+                    ).then((data)=>{
+                        currentCity[0].textContent = "Current city: " + data.city.name;
+                        let count = 0;
+                        for (let i = 0; i < 40; i += 8) {
+                            dateShow[count].textContent = data.list[i].dt_txt;
+                            temperature[count].textContent = data.list[i].main.temp_min + " °F";
+                            summary[count].textContent = data.list[i].weather[0].description.toUpperCase();
+                            humidity[count].textContent = "Humidity: " + data.list[i].main.humidity + "%";
+                            wind[count].textContent = "Wind: " + data.list[i].wind.speed;
+                            pressure[count].textContent = "Pressure: " + data.list[i].main.pressure;
+                            let iconShow = data.list[i].weather[0].icon;
+                            icon[count].innerHTML =
+                                `<img src=" http://openweathermap.org/img/wn/${iconShow}.png" style= 'height:5rem'/>`;
+                            count++;
+                        }
+
+                    })
+
+                }
+                marker.on('dragend', onDragEnd);
+                // ---------------------------btn search------------------------------
+                $('#search-btn').click(function centerLocationName(e) {
+                    e.preventDefault()
+                    geocode(searchInput.value, MAPBOX_TOKEN)
+                        .then(function (result) {
+                            // console.log(result);
+                            map.setCenter(result);
+                            map.setZoom(9);
+                            new mapboxgl.Marker({
+                                draggable:true
+                            }).setLngLat(result).addTo(map);
+                            map.zoomTo(15, { duration: 3000 });
+                        });
+
+                    var cityName = searchInput.value;
+                    // -----------------------------------search city wearther-----------------
+                    let web2 = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + OPEN_WEATHER_APPID + "&units=imperial";
+                    fetch(web2).then(
+                        (response) => {
+                            return response.json();
+                        }
+                    ).then((data) => {
+                        console.log(data);
+                        currentCity[0].textContent = "Current city: " + cityName.toUpperCase();
+                        let count = 0;
+                        for (let i = 0; i < 40; i += 8) {
+                            dateShow[count].textContent = data.list[i].dt_txt;
+                            temperature[count].textContent = data.list[i].main.temp_min + " °F";
+                            summary[count].textContent = data.list[i].weather[0].description.toUpperCase();
+                            humidity[count].textContent = "Humidity: " + data.list[i].main.humidity + "%";
+                            wind[count].textContent = "Wind: " + data.list[i].wind.speed;
+                            pressure[count].textContent = "Pressure: " + data.list[i].main.pressure;
+                            let iconShow = data.list[i].weather[0].icon;
+                            icon[count].innerHTML =
+                                `<img src=" http://openweathermap.org/img/wn/${iconShow}.png" style= 'height:5rem'/>`;
+                            count++;
+                        }
+                    });
+                });
+                // -------------------------------------btn search fun done------------------------
+            //----------draggable------------
             });
         });
     }
 })
-//------------------------map--------------//
-$('#search-btn').click(function() {
-    alert("wrong")
-    mapboxgl.accessToken = MAPBOX_TOKEN;
-    const map1 = new mapboxgl.Map({
-        container: 'map1', // container ID
-        style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
-        center: [-98.4916, 29.4252],
-        zoom: 10,
-    });
 
-});
+
