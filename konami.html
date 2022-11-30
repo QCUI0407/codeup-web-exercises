@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konami</title>
+</head>
+<body>
+
+<h1>KONAMI CODE</h1>
+<label for="konamiBox">Enter up,left,right,down,a,b,enter</label><br><br>
+<input type="text" id="konamiBox" placeholder="up,left,right,down,a,b,enter"} style="padding: 30px">
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script>
+    $(function konami() {
+        let input = "";
+        let codes = "38373940656613";
+        $('#konamiBox').keydown(function(e) {
+            input += e.keyCode;
+            if (input.indexOf(codes) !== -1) {
+                input = "";
+                alert("add 30 lives!")
+            }
+        });
+    })
+</script>
+</body>
+</html>
