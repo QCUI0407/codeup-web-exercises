@@ -96,27 +96,40 @@ console.log(emails);
 //Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
 const averageTotalYears = users.reduce((total,user)=>{
     total += user.yearsOfExperience
+    console.log("0_0"+total/users.length)
     return total;
 },0)
 console.log(averageTotalYears/users.length);
 
 // Use .reduce to get the longest email from the list of users.
 const longestEmail = users.reduce((email,user)=>{
+    // if(email.length<user.email.length){
+    //     return user.email
+    // }else {
+    //     return email;
+    // }
     return email.length > user.email.length ? email : user.email;
-})
-console.log(longestEmail);
+},"")
+console.log(typeof longestEmail + " :" +longestEmail);
 
 // Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
 
+//     const singleStr = users.reduce((str, user,currentIndex) => {
+//         if(currentIndex === users.length -1){
+//             return `${str}${user.name}`;
+//         }
+//         return `${str}${user.name}`;
+//     }, 'Your instructors are:'); // start with an empty object
+//
+// console.log(singleStr);
 
-
-
-
-    const singleStr = users.reduce((str, user) => {
-        return str += " "+user.name +",";
-    }, ''); // start with an empty object
-
-console.log(singleStr);
+let instructors = users.reduce(function (output, user,   currentIndex){
+    if(currentIndex === users.length -1){
+        return `${output} ${user.name}.`
+    }
+    return `${output} ${user.name},`;
+}, "Your instructors are:")
+console.log(instructors)
 
 
 
